@@ -6,10 +6,14 @@ class RecipeItem extends React.Component {
       <div className='card spacing'>
         <h3 className="card-header">{this.props.item.menu}</h3>
         <div className='card-block'>
-          <ul className="list-group list-group-flush">
-            <li className="list-group-item">
-
-            </li>
+          <ul className="list-group">
+              {
+                this.props.item.ingredients.map((item, i) => {
+                  return (
+                    <li className="list-group-item" key={i}>{item}</li>
+                  );
+                })
+              }
           </ul>
         </div>
       </div>
