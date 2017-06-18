@@ -16,6 +16,10 @@ class RecipeItem extends React.Component {
               }
           </ul>
         </div>
+        <div>
+          <button type="button" className="btn btn-outline-primary btn-spacing">Edit</button>
+          <button type="button" className="btn btn-outline-danger btn-spacing">Delete</button>
+        </div>
       </div>
     );
   }
