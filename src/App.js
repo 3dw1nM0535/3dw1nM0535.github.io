@@ -1,12 +1,13 @@
 import React from 'react';
 import Home from './components/Home';
+import Recipe from './components/Recipe';
 import './App.css';
 
 class App extends React.Component {
   constructor(){
     super();
     this.state = {
-      recipes
+      recipes: []
     }
   }
 
