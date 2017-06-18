@@ -9,3 +9,8 @@
 .btn-spacing {
   margin: 1rem;
 }
+
+.cover {
+  background-color: DeepPink;
+  color: white;
+}
