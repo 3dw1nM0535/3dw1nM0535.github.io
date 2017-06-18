@@ -16,6 +16,9 @@ class Recipe extends React.Component {
         <div className="jumbotron">
           {recipeItem}
         </div>
+        <div className="text-center">
+          <p className="lead">BY Edwin Moses Lomolo</p>
+        </div>
       </div>
     );
   }
