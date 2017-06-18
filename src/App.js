@@ -35,7 +35,8 @@ class App extends React.Component {
   render() {
     return (
       <div>
-        <Home />        
+        <Home />   
+        <Recipe recipes={this.state.recipes} />     
       </div>
     );
   }
