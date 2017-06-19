@@ -26,8 +26,9 @@ class AddRecipe extends React.Component {
 
   render() {
     return(
-      <div className="card" style={{width: "40rem"}}>
-        <h3 className="card-title">Add Recipe</h3>
+    <div className="container">
+      <div className="card" style={{width: "20rem"}}>
+        <h3 className="card-title text-center">Add Recipe</h3>
         <div className="card-block">
           <form onSubmit={this.handleSubmit.bind(this)}>
           <div className="form-group">
@@ -38,12 +39,13 @@ class AddRecipe extends React.Component {
             <label className="form-control-label">Ingredients</label>
             <textarea className="form-control" ref="ingredients"></textarea>
           </div>
-          <di>
-            <input type="submit" className="btn btn-outline-secondary btn-sm" value="Submit" />
-          </di>
+          <div>
+            <input type="submit" className="btn btn-outline-primary btn-sm" value="Submit" />
+          </div>
         </form>
         </div>
       </div>
+     </div>
     );
   }
 }
