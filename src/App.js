@@ -52,14 +52,12 @@ class App extends React.Component {
     this.setState({recipes: recipes});
   }
 
-  }
-
   render() {
     return (
       <div>
         <Home />
         <Recipe recipes={this.state.recipes} onDelete={this.handleDeleteRecipe.bind(this)} />
-        <AddRecipe onEdit={this.handleEditRecipe.bind(this)} addRecipe={this.handleAddRecipe.bind(this)} />  
+        <AddRecipe addRecipe={this.handleAddRecipe.bind(this)} />  
         <Footer />
       </div>
     );
