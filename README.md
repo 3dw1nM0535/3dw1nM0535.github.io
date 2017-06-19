@@ -1,6 +1,6 @@
 # Recipe Box Menu
 
-## Add, Edit, Delete recipe menu amd ingredients
+## Add, Edit, Delete recipe menu and ingredients
 
 To use this repo ```git clone <url>``` and run ```npm install``` to download all the dependencies of this project.
 
