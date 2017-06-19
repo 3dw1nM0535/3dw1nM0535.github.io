@@ -1,4 +1,5 @@
 import React from 'react';
+import uuid from 'uuid';
 
 class AddRecipe extends React.Component {
   constructor() {
@@ -13,6 +14,7 @@ class AddRecipe extends React.Component {
       alert("Menu title and Ingredients can't be Empty!");
     } else {
       this.setState({newRecipe: {
+        id: uuid.v4(),
         menu: this.refs.menu.value,
         ingredients: this.refs.ingredients.value
       }}, function() {
