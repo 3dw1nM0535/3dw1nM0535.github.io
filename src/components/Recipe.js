@@ -19,7 +19,7 @@ class Recipe extends React.Component {
           {recipeItem}
         </div>
         <div>
-          <button type="button" className="btn btn-primary btn-lg">Add Recipe</button>
+          <button type="button"  className="btn btn-primary btn-lg">Add Recipe</button>
         </div>
         <div className="text-center">
           <p className="lead">BY Edwin Moses Lomolo</p>
