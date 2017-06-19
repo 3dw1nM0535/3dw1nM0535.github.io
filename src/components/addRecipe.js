@@ -20,6 +20,8 @@ class AddRecipe extends React.Component {
       }}, function() {
         this.props.addRecipe(this.state.newRecipe);
       });
+      this.refs.menu.value = '';
+      this.refs.ingredients.value = '';
     }
     e.preventDefault();
   }
