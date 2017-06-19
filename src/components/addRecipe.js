@@ -16,7 +16,7 @@ class AddRecipe extends React.Component {
       this.setState({newRecipe: {
         id: uuid.v4(),
         menu: this.refs.menu.value,
-        ingredients: this.refs.ingredients.value
+        ingredients: this.refs.ingredients.value.split(",")
       }}, function() {
         this.props.addRecipe(this.state.newRecipe);
       });
