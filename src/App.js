@@ -3,6 +3,7 @@ import uuid from 'uuid';
 import Home from './components/Home';
 import Recipe from './components/Recipe';
 import AddRecipe from './components/addRecipe';
+import Footer from './components/footer';
 import './App.css';
 
 class App extends React.Component {
@@ -57,6 +58,7 @@ class App extends React.Component {
         <Home />
         <Recipe recipes={this.state.recipes} onDelete={this.handleDeleteRecipe.bind(this)} />
         <AddRecipe addRecipe={this.handleAddRecipe.bind(this)} />  
+        <Footer />
       </div>
     );
   }
