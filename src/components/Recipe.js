@@ -4,12 +4,15 @@ import RecipeItem from './recipeItem';
 import AddRecipe from './addRecipe';
 
 class Recipe extends React.Component {
+  deleteRecipe(id) {
+    this.props.onDelete(id);
+  }
   render() {
     let recipeItem;
     if (this.props.recipes) {
       recipeItem = this.props.recipes.map((item, i) => {
         return (
-          <RecipeItem item={item} key={i} />
+          <RecipeItem onDelete={this.deleteRecipe.bind(this)} item={item} key={i} />
         );
       })
     }
