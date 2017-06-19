@@ -11,7 +11,7 @@ class AddRecipe extends React.Component {
 
   handleSubmit(e) {
     if (this.refs.menu.value === "" && this.refs.ingredients.value === "") {
-      alert("Menu title and Ingredients can't be Empty!");
+      alert("Menu Title and Ingredients can't be Empty!");
     } else {
       this.setState({newRecipe: {
         id: uuid.v4(),
