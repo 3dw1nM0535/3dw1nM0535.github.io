@@ -1,6 +1,10 @@
 import React from 'react';
 
 class RecipeItem extends React.Component {
+  deleteRecipe(id) {
+    this.props.onDelete(id);
+  }
+
   render() {
     return(
       <div className='card spacing'>
@@ -18,7 +22,7 @@ class RecipeItem extends React.Component {
         </div>
         <div>
           <button type="button" className="btn btn-outline-primary btn-spacing">Edit</button>
-          <button type="button" className="btn btn-outline-danger btn-spacing">Delete</button>
+          <button type="button" onClick={this.deleteRecipe.bind(this, this.props.item.id)} className="btn btn-outline-danger btn-spacing">Delete</button>
         </div>
       </div>
     );
