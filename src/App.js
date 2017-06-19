@@ -52,12 +52,37 @@ class App extends React.Component {
     this.setState({recipes: recipes});
   }
 
+  handleEditRecipe(id) {
+    return (
+    <div className="container">
+      <div className="card" style={{width: "30rem"}}>
+        <h3 className="card-title text-center">Add Recipe</h3>
+        <div className="card-block">
+          <form onSubmit={this.handleSubmit.bind(this)}>
+          <div className="form-group">
+            <label className="form-control-label">Menu Title</label>
+            <input className="form-control" ref="menu" type="text" />
+          </div>
+          <div className="form-group">
+            <label className="form-control-label">Ingredients</label>
+            <textarea className="form-control" ref="ingredients"></textarea>
+          </div>
+          <div>
+            <input type="submit" className="btn btn-outline-primary btn-sm" value="Submit" />
+          </div>
+        </form>
+        </div>
+      </div>
+     </div>
+    );
+  }
+
   render() {
     return (
       <div>
         <Home />
         <Recipe recipes={this.state.recipes} onDelete={this.handleDeleteRecipe.bind(this)} />
-        <AddRecipe addRecipe={this.handleAddRecipe.bind(this)} />  
+        <AddRecipe onEdit={this.handleEditRecipe.bind(this)} addRecipe={this.handleAddRecipe.bind(this)} />  
         <Footer />
       </div>
     );
