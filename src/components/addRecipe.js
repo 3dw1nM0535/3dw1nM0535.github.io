@@ -26,7 +26,7 @@ class AddRecipe extends React.Component {
 
   render() {
     return(
-      <div className="card">
+      <div className="card" style={{width: "40rem"}}>
         <h3 className="card-title">Add Recipe</h3>
         <div className="card-block">
           <form onSubmit={this.handleSubmit.bind(this)}>
