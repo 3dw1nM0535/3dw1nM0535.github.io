@@ -37,13 +37,19 @@ class App extends React.Component {
       }
     ]})
   }
+  
+  handleAddRecipe(recipe) {
+    let recipes = this.state.recipes;
+    recipes.push(recipe);
+    this.setState({recipes:recipes});
+  }
 
   render() {
     return (
       <div>
         <Home />
         <Recipe recipes={this.state.recipes} />
-        <AddRecipe />  
+        <AddRecipe addRecipe={this.handleAddRecipe.bind(this)} />  
       </div>
     );
   }
