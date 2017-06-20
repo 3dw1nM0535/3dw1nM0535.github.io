@@ -1,6 +1,13 @@
 import React from 'react';
 
 class RecipeItem extends React.Component {
+  constructor() {
+    super();
+    this.state = {
+      editing: false
+    }
+  }
+  
   deleteRecipe(id) {
     this.props.onDelete(id);
   }
