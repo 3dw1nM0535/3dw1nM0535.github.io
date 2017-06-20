@@ -52,9 +52,10 @@ class App extends React.Component {
     this.setState({recipes: recipes});
   }
 
-  handleRecipeEdit(newEdit, i) {
+  handleRecipeEdit(newRecipe, id) {
     let recipes = this.state.recipes;
-    recipes[i] = newEdit;
+    let index = recipes.findIndex(i => i.id === id);
+    recipes[index] = newRecipe;
     this.setState({recipes: recipes});
   }
 
@@ -62,7 +63,7 @@ class App extends React.Component {
     return (
       <div>
         <Home />
-        <Recipe recipes={this.state.recipes} onDelete={this.handleDeleteRecipe.bind(this)} />
+        <Recipe recipes={this.state.recipes} onDelete={this.handleDeleteRecipe.bind(this)} updateRecipe={this.handleRecipeEdit.bind(this)} />
         <AddRecipe addRecipe={this.handleAddRecipe.bind(this)} />  
         <Footer />
       </div>
