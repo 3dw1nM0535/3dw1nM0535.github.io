@@ -7,13 +7,17 @@ class RecipeItem extends React.Component {
       editing: false
     }
   }
-  
+
   deleteRecipe(id) {
     this.props.onDelete(id);
   }
 
   editRecipe() {
-    alert("Editing Recipe!");
+    this.setState({editing: false});
+  }
+
+  saveEdit() {
+    this.setState({editing: false});
   }
 
   render() {
