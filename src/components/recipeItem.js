@@ -13,15 +13,15 @@ class RecipeItem extends React.Component {
   }
 
   editRecipe(id) {
-    this.setState({editing: false});
+    this.setState({editing: true});
   }
 
   saveEdit(id) {
     this.setState({editing: false});
   }
 
-  render() {
-    return(
+  renderNormal() {
+    return (
       <div className='card spacing'>
         <h3 className="card-header">{this.props.item.menu}</h3>
         <div className='card-block'>
@@ -41,6 +41,35 @@ class RecipeItem extends React.Component {
         </div>
       </div>
     );
+  }
+
+  renderForm() {
+    return (
+    <div className="container">
+      <div className="card">
+        <h4 className="card-title text-center">Edit Recipe</h4>
+        <div className="card-block">
+          <form>
+          <div className="form-group">
+            <input className="form-control" defaultValue={this.props.item.menu} type="text" style={{width: "15rem"}} />
+          </div>
+          <div className="form-group">
+            <textarea className="form-control" defaultValue={this.props.item.ingredients} style={{width: "20rem"}}></textarea>
+          </div>
+          <button type="button" className="btn btn-success" onClick={this.saveEdit}>Save</button>
+        </form>
+      </div>
+     </div>
+    </div>
+    );
+  }
+
+  render() {
+   if(this.state.editing) {
+     return this.renderForm();
+   } else {
+     return this.renderNormal();
+   }
   }
 }
 
