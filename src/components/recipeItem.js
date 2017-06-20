@@ -56,7 +56,7 @@ class RecipeItem extends React.Component {
           <div className="form-group">
             <textarea className="form-control" defaultValue={this.props.item.ingredients} style={{width: "20rem"}}></textarea>
           </div>
-          <button type="button" className="btn btn-success" onClick={this.saveEdit}>Save</button>
+          <button type="button" className="btn btn-success" onClick={this.saveEdit.bind(this, this.props.item.id)}>Save</button>
         </form>
       </div>
      </div>
