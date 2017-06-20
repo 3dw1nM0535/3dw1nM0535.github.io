@@ -55,10 +55,10 @@ class RecipeItem extends React.Component {
         <div className="card-block">
           <form>
           <div className="form-group">
-            <input className="form-control" ref="editedTitle" defaultValue={this.props.item.menu} type="text" style={{width: "15rem"}} />
+            <input className="form-control" ref="editedTitle" defaultValue={this.props.item.menu} type="text" style={{width: "20rem"}} />
           </div>
           <div className="form-group">
-            <textarea className="form-control" ref="editedIngredients" defaultValue={this.props.item.ingredients} style={{width: "20rem"}}></textarea>
+            <textarea className="form-control" ref="editedIngredients" defaultValue={this.props.item.ingredients} style={{width: "25rem"}}></textarea>
           </div>
           <button type="button" className="btn btn-success" onClick={this.saveEdit.bind(this, this.props.item.id)}>Save</button>
         </form>
