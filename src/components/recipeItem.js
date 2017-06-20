@@ -1,4 +1,5 @@
 import React from 'react';
+import uuid from 'uuid';
 
 class RecipeItem extends React.Component {
   constructor() {
@@ -16,11 +17,17 @@ class RecipeItem extends React.Component {
     this.setState({editing: true});
   }
 
-  saveEdit(id) {
-    var menuEdit = this.refs.editedTitle.value;
-    var ingredientsEdit = this.refs.editedIngredients.value;
-    console.log(menuEdit);
-    console.log(ingredientsEdit);
+  edit(newRecipe, id) {
+    this.props.updateRecipe(newRecipe, id);
+  }
+
+  saveEdit() {
+    let newRecipe = {
+      id: uuid.v4(),
+      menu: this.refs.editedTitle.value,
+      ingredients: this.refs.editedIngredients.value
+    }
+    this.edit(newRecipe, this.props.index);
     this.setState({editing: false});
   }
 
@@ -33,7 +40,7 @@ class RecipeItem extends React.Component {
               {
                 this.props.item.ingredients.map((item, i) => {
                   return (
-                    <li className="list-group-item" key={i}>{item}</li>
+                    <li className="list-group-item" index={i} key={i}>{item}</li>
                   );
                 })
               }
