@@ -1,5 +1,6 @@
 import React from 'react';
 import uuid from 'uuid';
+import '../../src/App.css';
 
 class AddRecipe extends React.Component {
   constructor() {
@@ -28,25 +29,13 @@ class AddRecipe extends React.Component {
 
   render() {
     return(
-    <div className="container">
-      <div className="card" style={{width: "30rem"}}>
-        <h3 className="card-title text-center">Add Recipe</h3>
-        <div className="card-block">
-          <form onSubmit={this.handleSubmit.bind(this)}>
-          <div className="form-group">
-            <label className="form-control-label">Menu Title</label>
-            <input className="form-control" ref="menu" type="text" />
-          </div>
-          <div className="form-group">
-            <label className="form-control-label">Ingredients</label>
-            <textarea className="form-control" ref="ingredients"></textarea>
-          </div>
-          <div>
-            <input type="submit" className="btn btn-outline-primary btn-sm" value="Submit" />
-          </div>
-        </form>
-        </div>
-      </div>
+    <div className="container text-center">
+      <h4 className="display-4">Add Recipe</h4>
+      <form className="form-inline" onSubmit={this.handleSubmit.bind(this)}>
+        <input className="form-control mb-2 mr-sm-4 mb-sm-0" placeholder="Menu Title" ref="menu" type="text" />
+        <textarea className="form-control mb-2 mr-sm-4 mb-sm-0" ref="ingredients" placeholder="Ingredients"></textarea>
+        <input type="submit" className="btn btn-outline-primary btn-sm" value="Submit" />
+      </form>
      </div>
     );
   }
