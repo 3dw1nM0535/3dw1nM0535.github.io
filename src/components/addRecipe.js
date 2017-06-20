@@ -29,14 +29,22 @@ class AddRecipe extends React.Component {
 
   render() {
     return(
-    <div className="container text-center">
-      <h4 className="display-4">Add Recipe</h4>
-      <form className="form-inline" onSubmit={this.handleSubmit.bind(this)}>
-        <input className="form-control mb-2 mr-sm-4 mb-sm-0" placeholder="Menu Title" ref="menu" type="text" />
-        <textarea className="form-control mb-2 mr-sm-4 mb-sm-0" ref="ingredients" placeholder="Ingredients"></textarea>
-        <input type="submit" className="btn btn-outline-primary btn-sm" value="Submit" />
-      </form>
+    <div className="container">
+      <div className="card" style={{width: "40rem"}}>
+        <h4 className="card-title text-center">Add Recipe</h4>
+        <div className="card-block">
+          <form onSubmit={this.handleSubmit.bind(this)}>
+          <div className="form-group">
+            <input className="form-control" placeholder="Menu Title" ref="menu" type="text" style={{width: "15rem"}} />
+          </div>
+          <div className="form-group">
+            <textarea className="form-control mb-2 mr-sm-4 mb-sm-0" ref="ingredients" placeholder="Ingredients" style={{width: "20rem"}}></textarea>
+          </div>
+          <input type="submit" className="btn btn-primary btn-md" value="Submit" />
+        </form>
+      </div>
      </div>
+    </div>
     );
   }
 }
