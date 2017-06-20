@@ -38,7 +38,7 @@ class AddRecipe extends React.Component {
             <input className="form-control" placeholder="Menu Title" ref="menu" type="text" style={{width: "15rem"}} />
           </div>
           <div className="form-group">
-            <textarea className="form-control mb-2 mr-sm-4 mb-sm-0" ref="ingredients" placeholder="Ingredients" style={{width: "20rem"}}></textarea>
+            <textarea className="form-control" ref="ingredients" placeholder="Ingredients" style={{width: "20rem"}}></textarea>
           </div>
           <input type="submit" className="btn btn-primary btn-md" value="Submit" />
         </form>
