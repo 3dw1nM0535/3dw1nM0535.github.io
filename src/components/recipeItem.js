@@ -17,6 +17,10 @@ class RecipeItem extends React.Component {
   }
 
   saveEdit(id) {
+    var menuEdit = this.refs.editedTitle.value;
+    var ingredientsEdit = this.refs.editedIngredients.value;
+    console.log(menuEdit);
+    console.log(ingredientsEdit);
     this.setState({editing: false});
   }
 
@@ -51,10 +55,10 @@ class RecipeItem extends React.Component {
         <div className="card-block">
           <form>
           <div className="form-group">
-            <input className="form-control" defaultValue={this.props.item.menu} type="text" style={{width: "15rem"}} />
+            <input className="form-control" ref="editedTitle" defaultValue={this.props.item.menu} type="text" style={{width: "15rem"}} />
           </div>
           <div className="form-group">
-            <textarea className="form-control" defaultValue={this.props.item.ingredients} style={{width: "20rem"}}></textarea>
+            <textarea className="form-control" ref="editedIngredients" defaultValue={this.props.item.ingredients} style={{width: "20rem"}}></textarea>
           </div>
           <button type="button" className="btn btn-success" onClick={this.saveEdit.bind(this, this.props.item.id)}>Save</button>
         </form>
