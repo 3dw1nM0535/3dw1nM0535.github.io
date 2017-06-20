@@ -52,6 +52,12 @@ class App extends React.Component {
     this.setState({recipes: recipes});
   }
 
+  handleRecipeEdit(newEdit, i) {
+    let recipes = this.state.recipes;
+    recipes[i] = newEdit;
+    this.setState({recipes: recipes});
+  }
+
   render() {
     return (
       <div>
