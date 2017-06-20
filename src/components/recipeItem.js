@@ -12,11 +12,11 @@ class RecipeItem extends React.Component {
     this.props.onDelete(id);
   }
 
-  editRecipe() {
+  editRecipe(id) {
     this.setState({editing: false});
   }
 
-  saveEdit() {
+  saveEdit(id) {
     this.setState({editing: false});
   }
 
@@ -36,7 +36,7 @@ class RecipeItem extends React.Component {
           </ul>
         </div>
         <div>
-          <button type="button" onClick={this.editRecipe} className="btn btn-outline-primary btn-spacing">Edit</button>
+          <button type="button" onClick={this.editRecipe.bind(this, this.props.item.id)} className="btn btn-outline-primary btn-spacing">Edit</button>
           <button type="button" onClick={this.deleteRecipe.bind(this, this.props.item.id)} className="btn btn-outline-danger btn-spacing">Delete</button>
         </div>
       </div>
