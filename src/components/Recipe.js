@@ -1,7 +1,6 @@
 import React from 'react';
 import '../../src/App.css';
 import RecipeItem from './recipeItem';
-import AddRecipe from './addRecipe';
 
 class Recipe extends React.Component {
   deleteRecipe(id) {
