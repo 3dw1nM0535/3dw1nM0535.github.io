@@ -4,7 +4,7 @@ class RecipeItem extends React.Component {
   constructor() {
     super();
     this.state = {
-      editing: false,
+      editing: false
     }
   }
 
@@ -16,7 +16,9 @@ class RecipeItem extends React.Component {
     this.setState({editing: true});
   }
 
-  saveEdit(e) {
+  saveEdit(e, i) {
+    this.props.item.menu = this.refs.editedTitle.value;
+    this.props.item.ingredients = this.refs.editedIngredients.value.split(",");
     this.setState({editing: false});
     e.preventDefault();
   }
