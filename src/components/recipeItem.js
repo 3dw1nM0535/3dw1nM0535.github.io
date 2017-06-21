@@ -1,5 +1,4 @@
 import React from 'react';
-import uuid from 'uuid';
 
 class RecipeItem extends React.Component {
   constructor() {
