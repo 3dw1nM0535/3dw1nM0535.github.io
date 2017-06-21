@@ -4,7 +4,7 @@ class RecipeItem extends React.Component {
   constructor() {
     super();
     this.state = {
-      editing: false
+      editing: false,
     }
   }
 
