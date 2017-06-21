@@ -35,7 +35,7 @@ class RecipeItem extends React.Component {
               {
                 this.props.item.ingredients.map((item, i) => {
                   return (
-                    <li className="list-group-item" index={i} key={i}>{item}</li>
+                    <li className="list-group-item" key={i}>{item}</li>
                   );
                 })
               }
