@@ -18,11 +18,6 @@ class RecipeItem extends React.Component {
   }
 
   saveEdit() {
-    let recipe = {
-      id: uuid.v4(),
-      menu: this.refs.editedTitle.value,
-      ingredients: this.refs.editedIngredients.value
-    }
     this.setState({editing: false});
   }
 
