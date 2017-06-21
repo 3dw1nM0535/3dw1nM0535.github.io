@@ -11,6 +11,7 @@ class Recipe extends React.Component {
     this.props.updateRecipe();
   }
   render() {
+    console.log(this.props.recipes);
     let recipeItem;
     if (this.props.recipes) {
       recipeItem = this.props.recipes.map((item, i) => {
