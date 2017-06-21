@@ -23,7 +23,6 @@ class RecipeItem extends React.Component {
       menu: this.refs.editedTitle.value,
       ingredients: this.refs.editedIngredients.value
     }
-    this.edit(recipe);
     this.setState({editing: false});
   }
 
@@ -72,7 +71,6 @@ class RecipeItem extends React.Component {
   }
 
   render() {
-    console.log(this.props.recipes);
    if(this.state.editing) {
      return this.renderForm();
    } else {
