@@ -9,25 +9,15 @@ class RecipeItem extends React.Component {
     }
   }
 
-  deleteRecipe(id) {
-    this.props.onDelete(id);
+  deleteRecipe(i) {
+    this.props.onDelete(i);
   }
 
   editRecipe(id) {
     this.setState({editing: true});
   }
 
-  edit(newRecipe, id) {
-    this.props.updateRecipe(newRecipe, id);
-  }
-
-  saveEdit() {
-    let newRecipe = {
-      id: uuid.v4(),
-      menu: this.refs.editedTitle.value,
-      ingredients: this.refs.editedIngredients.value
-    }
-    this.edit(newRecipe, this.props.index);
+  saveEdit(recipe, i) {
     this.setState({editing: false});
   }
 
@@ -47,8 +37,8 @@ class RecipeItem extends React.Component {
           </ul>
         </div>
         <div>
-          <button type="button" onClick={this.editRecipe.bind(this, this.props.item.id)} className="btn btn-outline-primary btn-spacing">Edit</button>
-          <button type="button" onClick={this.deleteRecipe.bind(this, this.props.item.id)} className="btn btn-outline-danger btn-spacing">Delete</button>
+          <button type="button" onClick={this.editRecipe.bind(this)} className="btn btn-outline-primary btn-spacing">Edit</button>
+          <button type="button" onClick={this.deleteRecipe.bind(this)} className="btn btn-outline-danger btn-spacing">Delete</button>
         </div>
       </div>
     );
@@ -67,7 +57,7 @@ class RecipeItem extends React.Component {
           <div className="form-group">
             <textarea className="form-control" ref="editedIngredients" defaultValue={this.props.item.ingredients} style={{width: "25rem"}}></textarea>
           </div>
-          <button type="button" className="btn btn-success" onClick={this.saveEdit.bind(this, this.props.item.id)}>Save</button>
+          <button type="button" className="btn btn-success" onClick={this.saveEdit.bind(this)}>Save</button>
         </form>
       </div>
      </div>
@@ -76,6 +66,7 @@ class RecipeItem extends React.Component {
   }
 
   render() {
+    console.log(this.props.recipes);
    if(this.state.editing) {
      return this.renderForm();
    } else {
