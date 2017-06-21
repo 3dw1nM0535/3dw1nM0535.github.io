@@ -7,16 +7,15 @@ class Recipe extends React.Component {
     this.props.onDelete(i);
   }
 
-  edit() {
-    this.props.updateRecipe();
+  edit(editedRecipe, i) {
+    this.props.updateRecipe(editedRecipe, i);
   }
   render() {
-    console.log(this.props.recipes);
     let recipeItem;
     if (this.props.recipes) {
       recipeItem = this.props.recipes.map((item, i) => {
         return (
-          <RecipeItem updateRecipe={this.edit.bind(this)} onDelete={this.deleteRecipe.bind(this)} recipes={this.props.recipes} item={item} key={i} />
+          <RecipeItem updateRecipe={this.edit.bind(this)} onDelete={this.deleteRecipe.bind(this)} item={item} key={i} />
         );
       })
     }
